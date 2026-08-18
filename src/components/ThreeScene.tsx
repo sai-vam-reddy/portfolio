@@ -105,7 +105,7 @@ function ScrollObject() {
 // 🎯 MAIN SCENE
 export default function ThreeScene() {
   return (
-    <div className="fixed inset-0 -z-20 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
       <Canvas camera={{ position: [0, 0, 4] }}>
         <ambientLight intensity={1.5} />
         <directionalLight position={[2, 2, 2]} intensity={2} />
