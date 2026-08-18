@@ -270,7 +270,7 @@ export default function Home() {
   ];
 
   return (
-    <main id="home" className="relative min-h-screen bg-black text-white">
+    <main id="home" className="relative min-h-screen text-white">
       {/* Existing 3D scene — DO NOT REMOVE */}
       <ThreeScene />
 
