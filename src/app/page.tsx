@@ -18,7 +18,7 @@ const Section = ({
 }) => (
   <section
     id={id}
-    className={`py-24 px-6 md:px-12 max-w-6xl mx-auto ${className}`}
+    className={`relative z-10 py-24 px-6 md:px-12 max-w-6xl mx-auto ${className}`}
   >
     {children}
   </section>
@@ -55,21 +55,27 @@ const Navbar = () => (
       <a href="#home" className="hover:text-white transition-colors">
         Home
       </a>
+
       <a href="#about" className="hover:text-white transition-colors">
         About
       </a>
+
       <a href="#skills" className="hover:text-white transition-colors">
         Skills
       </a>
+
       <a href="#experience" className="hover:text-white transition-colors">
         Experience
       </a>
+
       <a href="#projects" className="hover:text-white transition-colors">
         Projects
       </a>
+
       <a href="#certificates" className="hover:text-white transition-colors">
         Certificates
       </a>
+
       <a href="#contact" className="hover:text-white transition-colors">
         Contact
       </a>
@@ -93,7 +99,9 @@ const ProjectCard = ({
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
       <div className="relative z-10">
-        <h3 className="text-xl font-semibold mb-3">{title}</h3>
+        <h3 className="text-xl font-semibold mb-3">
+          {title}
+        </h3>
 
         <p className="text-white/60 mb-6 leading-relaxed text-sm">
           {description}
@@ -126,11 +134,16 @@ const SkillCard = ({
   <motion.div
     whileHover={{ y: -5 }}
     transition={{ duration: 0.3 }}
-    className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors"
+    className="relative z-10 p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors"
   >
     <div className="flex items-center justify-between mb-5">
-      <span className="text-white/30 text-xs font-mono">{number}</span>
-      <span className="text-white/80 font-medium text-sm">{title}</span>
+      <span className="text-white/30 text-xs font-mono">
+        {number}
+      </span>
+
+      <span className="text-white/80 font-medium text-sm">
+        {title}
+      </span>
     </div>
 
     <div className="flex flex-wrap gap-2">
@@ -168,9 +181,13 @@ const CertificateCard = ({
           Certificate
         </span>
 
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <h3 className="text-lg font-semibold mb-2">
+          {title}
+        </h3>
 
-        <p className="text-sm text-white/50 mb-3">{organization}</p>
+        <p className="text-sm text-white/50 mb-3">
+          {organization}
+        </p>
 
         <p className="text-sm text-white/60 leading-relaxed flex-1 mb-6">
           {description}
@@ -201,66 +218,77 @@ export default function Home() {
         'A Flutter-based IoT application for controlling an automated animal feeding and door system. The system supports remote control and scheduled automation so feeding operations can be triggered at selected times.',
       tech: ['Flutter', 'Dart', 'IoT', 'Firebase', 'Automation'],
     },
+
     {
       title: 'Blue Smart Bus Attendance System',
       description:
         'A BLE-based smart attendance application designed to detect student BLE IDs and record attendance automatically. The system includes student registration, bus information and attendance records.',
       tech: ['Flutter', 'Dart', 'BLE', 'Django', 'REST API', 'MySQL'],
     },
+
     {
       title: 'Antaraal — BLE Sensor Monitor',
       description:
         'A real-time sensor monitoring application connected to ESP32 hardware. The application displays sensor information including radiation, tilt angle, atmospheric pressure and temperature along with location information.',
       tech: ['Flutter', 'Dart', 'ESP32', 'BLE', 'GPS'],
     },
+
     {
       title: 'Posture Detection Application',
       description:
         'An IoT-based posture monitoring application that receives posture information from an ESP32 and presents the data through a Flutter dashboard with graphs, history and weekly comparisons.',
       tech: ['Flutter', 'Dart', 'ESP32', 'IoT', 'Data Visualization'],
     },
+
     {
       title: 'IoT Car Control App',
       description:
         'A mobile application for controlling an IoT car through Bluetooth, including four-wheel movement and servo motor control.',
       tech: ['Flutter', 'Dart', 'Bluetooth', 'IoT', 'ESP32'],
     },
+
     {
       title: 'Hospital Management System — Don Bosco',
       description:
         'A hospital management system designed to manage patient information, bed allocation, doctor details and other required patient information in real time.',
       tech: ['Application Development', 'Database', 'Real-Time Data'],
     },
+
     {
       title: 'Interactive Educational Video Platform',
       description:
         'A platform designed to integrate educational textbook content into interactive video formats, creating a more engaging learning experience.',
       tech: ['JavaScript', 'Web Development', 'UI/UX'],
     },
+
     {
       title: 'AI-based Quiz Generator',
       description:
         'An AI-based application that generates customized quizzes based on user input, providing a personalized quiz experience.',
       tech: ['Python', 'AI', 'Machine Learning'],
     },
+
     {
       title: 'Video to Cartoon Converter',
       description:
         'An application designed to convert live video into cartoon-style visuals, exploring computer vision and creative media processing.',
       tech: ['Python', 'Computer Vision', 'AI'],
     },
+
     {
       title: 'Travel Management System',
       description:
         'A travel management website that allows users to plan trips, manage itineraries and handle accommodation-related planning.',
       tech: ['Web Development', 'Database', 'UI/UX'],
     },
+
     {
       title: 'Hospital Management System',
       description:
         'A hospital management application focused on patient records and appointment scheduling to streamline administrative workflows.',
       tech: ['Java', 'MySQL'],
     },
+
     {
       title: 'GreytHR — Chatbot Development Project',
       description:
@@ -270,15 +298,29 @@ export default function Home() {
   ];
 
   return (
-    <main id="home" className="relative min-h-screen text-white">
-      {/* Existing 3D scene — DO NOT REMOVE */}
+    <main
+      id="home"
+      className="relative isolate min-h-screen text-white"
+    >
+      {/* -------------------------------------------------- */}
+      {/* 3D Scene - KEEPING YOUR EXISTING ThreeScene */}
+      {/* -------------------------------------------------- */}
+
       <ThreeScene />
 
-      {/* Background glow — kept behind everything */}
+      {/* -------------------------------------------------- */}
+      {/* Background */}
+      {/* -------------------------------------------------- */}
+
       <div className="fixed inset-0 -z-30 bg-black pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-cyan-500/10 blur-[140px] rounded-full" />
+
         <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-purple-500/10 blur-[140px] rounded-full" />
       </div>
+
+      {/* -------------------------------------------------- */}
+      {/* Navigation */}
+      {/* -------------------------------------------------- */}
 
       <Navbar />
 
@@ -332,7 +374,9 @@ export default function Home() {
         <FadeIn>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-bold mb-6">About Me</h2>
+              <h2 className="text-3xl font-bold mb-6">
+                About Me
+              </h2>
 
               <p className="text-lg text-white/60 leading-relaxed max-w-xl">
                 I am a developer focused on building practical software
@@ -385,7 +429,10 @@ export default function Home() {
       <Section id="skills" className="border-t border-white/5">
         <FadeIn>
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-4">Skills & Technologies</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Skills & Technologies
+            </h2>
+
             <p className="text-white/50">
               Technologies and tools I use to build applications and
               data-driven solutions.
@@ -463,7 +510,10 @@ export default function Home() {
       <Section id="experience" className="border-t border-white/5">
         <FadeIn>
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-4">Experience</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Experience
+            </h2>
+
             <p className="text-white/50">
               Internship and practical development experience.
             </p>
@@ -485,14 +535,14 @@ export default function Home() {
                 </div>
 
                 <span className="text-sm text-white/40">
-                  2026
+                  Feb 2026 — May 2026
                 </span>
               </div>
 
               <p className="text-white/60 leading-relaxed mt-5 max-w-3xl">
-                Practical software development experience involving
-                application development, problem solving and working with
-                modern development technologies.
+                Internship experience involving application development,
+                assigned technical tasks, problem solving and practical
+                software development work.
               </p>
             </div>
           </FadeIn>
@@ -511,14 +561,13 @@ export default function Home() {
                 </div>
 
                 <span className="text-sm text-white/40">
-                  2025
+                  Aug 2025 — Oct 2025
                 </span>
               </div>
 
               <p className="text-white/60 leading-relaxed mt-5 max-w-3xl">
-                Practical experience working on software-related tasks and
-                development workflows, along with exposure to real-world
-                project requirements.
+                Practical professional experience working on software-related
+                tasks and development workflows in a real-world environment.
               </p>
             </div>
           </FadeIn>
@@ -533,7 +582,9 @@ export default function Home() {
         <FadeIn>
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold mb-4">Selected Projects</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Selected Projects
+              </h2>
 
               <p className="text-white/50">
                 A collection of applications, AI solutions, IoT systems and
@@ -558,7 +609,10 @@ export default function Home() {
       {/* Certificates */}
       {/* -------------------------------------------------- */}
 
-      <Section id="certificates" className="border-t border-white/5">
+      <Section
+        id="certificates"
+        className="border-t border-white/5"
+      >
         <FadeIn>
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-4">
@@ -638,21 +692,6 @@ export default function Home() {
                 href="mailto:saivamshi200427@gmail.com"
                 className="flex items-center gap-3 px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors w-full md:w-auto"
               >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-white/60"
-                >
-                  <path d="m22 2-10 11" />
-                  <path d="m22 2-7 20-4-9-9-4Z" />
-                </svg>
-
                 <span>Email Me</span>
               </a>
 
@@ -662,22 +701,6 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors w-full md:w-auto"
               >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-white/60"
-                >
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-
                 <span>LinkedIn</span>
               </a>
 
@@ -687,21 +710,6 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors w-full md:w-auto"
               >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-white/60"
-                >
-                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                  <path d="M9 18c-4.51 2-5-2-7-2" />
-                </svg>
-
                 <span>GitHub</span>
               </a>
             </div>
@@ -709,13 +717,11 @@ export default function Home() {
         </FadeIn>
       </Section>
 
-      {/* Existing subtle background decoration */}
-      <div className="fixed inset-0 -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/[0.03] blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/[0.03] blur-[120px] rounded-full" />
-      </div>
+      {/* -------------------------------------------------- */}
+      {/* Footer */}
+      {/* -------------------------------------------------- */}
 
-      <footer className="py-12 px-6 border-t border-white/5 text-center text-white/20 text-sm">
+      <footer className="relative z-10 py-12 px-6 border-t border-white/5 text-center text-white/20 text-sm">
         <p>
           © {new Date().getFullYear()} Vamshi Reddy. Designed & Developed by
           Vamshi Reddy
